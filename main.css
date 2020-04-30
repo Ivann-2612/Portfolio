@@ -8,10 +8,26 @@ html, body {
   padding: 0;
   margin: 0;
   color: white;
+  height: 100%;
   text-align: center;
-  background-color: #3a86ff;
+  background-color: #8E97A6;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
-
+a {
+  color: #2ec4b6;
+}
+#iv {
+  margin:0;
+  position: relative;
+  top:50%;
+  font-family: monospace, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  color: #212121;
+  font-weight: 700;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
 .wrapper {
   display: flex;
   flex-flow: row wrap;
@@ -23,13 +39,40 @@ html, body {
   height: 600px;
   margin: 3em;
   perspective: 1500px;
+  position: relative;
+  animation-name: card;
+  animation-duration: 5s;
+
+}
+@keyframes card {
+  0%   {top:-900px;opacity:0}
+  50%  {top: 20px;opacity:0.5;}
+  100% {top:0;opacity:1;}
+}
+#nameh2 {
+  position: relative;
+  animation-name: name;
+  animation-duration: 8s;
+}
+@keyframes name {
+  0%   {left:-500px;}
+  100% {left:0;}
+}
+#portfolio {
+  position: relative;
+  animation-name: portf;
+  animation-duration: 7s;
+}
+@keyframes portf {
+  0%   {right:-500px;}
+  100% {right:0;}
 }
 .day-card .content {
   position: relative;
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  transition: transform 0.8s cubic-bezier(0.75, 0, 0.85, 1);
+  transition: transform  0.8s cubic-bezier(0.75, 0, 0.85, 1);
 }
 
 .more {
@@ -74,7 +117,7 @@ html, body {
   display: block;
   border-radius: 16px;
   backface-visibility: hidden;
- /* background: linear-gradient(40deg, rgba(207, 0, 15, 0.5), rgba(0, 0, 0, 0.5));*/
+  background: linear-gradient(160deg, rgba(85,85,85,0.5), rgba(0, 0, 0, 0.5));
 }
 .front .inner {
   grid-template-rows: 5fr 1fr 1fr 2fr 1fr;
@@ -102,33 +145,24 @@ html, body {
 
 .back {
   transform: rotateY(180deg);
-  background-color: #001233;
+  background-color: #001845;;
   border: 5px solid white;
   animation-name:example;
-  animation-duration: 10s;
+  animation-duration: 6s;
+  animation-delay:7s;
   animation-iteration-count: 1;
   transition:opacity 0.15s ease-out;
-
-   
  }
   @keyframes example {
-    from {filter:hue-rotate(0deg);}
-    to{filter: hue-rotate(360deg);}
-     0% {background-color: #979dac;}
-     25% {background-color:#7d8597;}
-    50% {background-color: #5c677d;}
-    75% {background-color: #33415c;}
-    100% {background-color: #001233;}
+   
+     0% {background-color: #0466c8;}
+     25% {background-color:#0353a4;}
+    50% {background-color: #023e7d;}
+    75% {background-color: #002855;}
+    100% {background-color: #001845;}
   }
-}
 
 
-}
-#ivan {
-
-  font-size: 36px !important;
- 
-}
 .back .inner {
   grid-template-rows: 1fr 2fr 1fr 2fr 14fr 1fr 1fr;
   grid-template-columns: repeat(4, auto);
@@ -244,21 +278,4 @@ html, body {
   border-radius: 50%;
 }
 
-::-webkit-scrollbar {
-  width: 5px;
-}
 
-::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-}
-
-::-webkit-scrollbar-thumb {
-  background: #ff6666;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: red;
-}
-a {
-  color: #2ec4b6;
-}
